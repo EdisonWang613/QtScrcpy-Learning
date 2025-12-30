@@ -13,6 +13,17 @@
 *   **OpenGL 渲染色彩异常修复**：
     *   **问题**：在 Windows 新版显卡驱动环境下，发现旧版 OpenGL `GL_LUMINANCE` 格式兼容性失效，导致画面缺失红色通道（显示发青）。
     *   **解决**：重写渲染管线，将纹理格式迁移至现代标准的 `GL_RED`，并修改 Fragment Shader (片元着色器) 的采样算法，成功修复了色彩显示问题。
+<table>
+<tr>
+    <td width="50%" align="center"><b>❌ 修复前 (Bug: 红色通道丢失)</b></td>
+    <td width="50%" align="center"><b>✅ 修复后 (Normal: 色彩正常)</b></td>
+</tr>
+<tr>
+    <!-- 注意：下面 src="" 引号里填你刚才复制的图片链接 -->
+    <td><img src="https://github.com/user-attachments/assets/a929f445-6d21-497d-80e9-111e557ce1cc" width="100%"/></td>
+    <td><img src="https://github.com/user-attachments/assets/14ff089c-0b68-4024-9433-09c6f973445f" width="100%"/></td>
+</tr>
+</table>
 
 ### 2. 环境构建与移植
 *   **Windows 编译环境搭建**：
